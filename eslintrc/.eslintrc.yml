@@ -1,0 +1,10 @@
+root: true
+plugins:
+  - flowtype
+extends:
+  - airbnb-base
+  - airbnb
+  - plugin:flowtype/recommended
+settings:
+  flowtype:
+    onlyFilesWithFlowAnnotation: true
