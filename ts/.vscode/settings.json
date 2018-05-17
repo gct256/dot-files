@@ -32,20 +32,22 @@
   //
   "javascript.validate.enable": false,
   //
-  "typescript.validate.enable": false,
+  "typescript.validate.enable": true,
   //
-  "eslint.enable": true,
+  "eslint.enable": false,
   "eslint.autoFixOnSave": false,
   //
   "prettier.arrowParens": "always",
   "prettier.eslintIntegration": true,
   "prettier.singleQuote": true,
   "prettier.tabWidth": 2,
-  "prettier.trailingComma": "all",
+  "prettier.trailingComma": "none",
   "prettier.useTabs": false,
   //
   "flow.enabled": false,
   "flow.runOnAllFiles": false,
   "flow.runOnEdit": true,
-  "flow.stopFlowOnExit": true
+  "flow.stopFlowOnExit": true,
+  //
+  "tslint.enable": true
 }

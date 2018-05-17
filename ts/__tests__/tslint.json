@@ -1,0 +1,16 @@
+{
+  "extends": ["tslint:latest", "tslint-react"],
+  "rules": {
+    "quotemark": [true, "single", "jsx-double"],
+    "no-relative-imports": false,
+    "no-import-side-effect": [true, { "ignore-module": "(\\.html|\\.css)$" }],
+    "variable-name": [true, "allow-pascal-case"],
+    "mocha-no-side-effect-code": false,
+    "ordered-imports": [
+      true,
+      {
+        "named-imports-order": "lowercase-last"
+      }
+    ]
+  }
+}
