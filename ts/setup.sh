@@ -6,7 +6,7 @@ yarn add \
   react-dom \
   redux \
   redux-logger \
-  redux-react \
+  react-redux \
   typed-immutable-record
 
 yarn add -D \
@@ -21,10 +21,10 @@ yarn add -D \
   ts-jest \
   ts-loader \
   tslint \
-  tslint-microsoft-contrif \
+  tslint-microsoft-contrib \
   tslint-react \
   typescript \
   webpack \
   webpack-serve
 
-rm -i "$0"
+rm "$0"

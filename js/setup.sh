@@ -6,7 +6,7 @@ yarn add \
   react-dom \
   redux \
   redux-logger \
-  redux-react
+  react-redux
 
 yarn add -D \
   babel-core \
@@ -29,4 +29,4 @@ yarn add -D \
   webpack \
   webpack-serve
 
-rm -i "$0"
+rm "$0"
