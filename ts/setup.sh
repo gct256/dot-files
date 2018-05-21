@@ -1,7 +1,7 @@
 #!/bin/sh
 
 yarn add \
-  immutable \
+  immutable@rc \
   react \
   react-dom \
   redux \
