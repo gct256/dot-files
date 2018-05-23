@@ -1,0 +1,8 @@
+{
+  "action type": {
+    "prefix": "actiontype",
+    "body": [
+      "const $1: '$1' = '$1';"
+    ]
+  }
+}

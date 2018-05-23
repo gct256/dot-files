@@ -6,8 +6,7 @@ yarn add \
   react-dom \
   redux \
   redux-logger \
-  react-redux \
-  typed-immutable-record
+  react-redux
 
 yarn add -D \
   @types/jest \
@@ -25,6 +24,7 @@ yarn add -D \
   tslint-react \
   typescript \
   webpack \
+  webpack-cli \
   webpack-serve
 
 rm "$0"
