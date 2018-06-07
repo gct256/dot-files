@@ -1,6 +1,7 @@
 {
   "extends": ["tslint:latest", "tslint-react", "tslint-microsoft-contrib"],
   "rules": {
+    "align": [true, "parameters"],
     "quotemark": [true, "single", "jsx-double"],
     "no-relative-imports": false,
     "no-import-side-effect": [true, { "ignore-module": "(\\.html|\\.css)$" }],
