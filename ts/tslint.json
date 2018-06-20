@@ -6,6 +6,16 @@
     "no-relative-imports": false,
     "no-import-side-effect": [true, { "ignore-module": "(\\.html|\\.css)$" }],
     "variable-name": [true, "allow-pascal-case"],
+    "function-name": [
+      true,
+      {
+        "method-regex": "^[a-z][\\w\\d]+$",
+        "private-method-regex": "^[a-z][\\w\\d]+$",
+        "protected-method-regex": "^[a-z][\\w\\d]+$",
+        "static-method-regex": "^[a-z][\\w\\d]+$",
+        "function-regex": "^[a-z][\\w\\d]+$"
+      }
+    ],
     "mocha-no-side-effect-code": false,
     "ordered-imports": [
       true,
