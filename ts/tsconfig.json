@@ -2,6 +2,7 @@
   "compilerOptions": {
     "lib": ["dom", "es2018"],
     "jsx": "react",
+    "target": "es5",
 
     "noUnusedLocals": true,
     "noUnusedParameters": true,

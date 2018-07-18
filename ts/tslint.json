@@ -4,7 +4,10 @@
     "align": [true, "parameters"],
     "quotemark": [true, "single", "jsx-double"],
     "no-relative-imports": false,
-    "no-import-side-effect": [true, { "ignore-module": "(\\.html|\\.css)$" }],
+    "no-import-side-effect": [
+      true,
+      { "ignore-module": "^@fortawesome|(\\.html|\\.css|\\.scss|\\.sass)$" }
+    ],
     "variable-name": [true, "allow-pascal-case"],
     "function-name": [
       true,
@@ -28,6 +31,14 @@
     "cyclomatic-complexity": [true, 30],
     "no-submodule-imports": [true],
     "number-literal-format": false,
-    "interface-name": [true, "never-prefix"]
+    "interface-name": [true, "never-prefix"],
+    "missing-jsdoc": false,
+    "typedef": [
+      true,
+      "parameter",
+      "arrow-parameter",
+      "property-declaration",
+      "member-variable-declaration"
+    ]
   }
 }

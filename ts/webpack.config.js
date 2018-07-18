@@ -1,9 +1,6 @@
 const path = require('path');
 
-const isDev = process.env.WEBPACK_SERVE;
-// const isDev = process.env.NODE_ENV !== 'production'
-
-const distPath = path.resolve(__dirname, isDev ? 'dist' : 'dist');
+const distPath = path.resolve(__dirname, 'dist');
 
 const baseConfig = {
   mode: isDev ? 'development' : 'production',
@@ -17,6 +14,10 @@ const baseConfig = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.s[ca]ss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
     ],
   },
   resolve: {
@@ -28,7 +29,7 @@ module.exports = {
   ...baseConfig,
   entry: './src/script.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: distPath,
     filename: 'script.js',
   },
 };

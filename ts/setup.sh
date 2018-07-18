@@ -1,30 +1,25 @@
 #!/bin/sh
 
 yarn add \
-  immutable@rc \
-  react \
-  react-dom \
-  redux \
+  react react-dom \
+  redux react-redux immutable@rc \
   redux-logger \
-  react-redux
+  bulma \
+  @fortawesome/fontawesome @fortawesome/fontawesome-free-solid \
+  @fortawesome/fontawesome-svg-core @fortawesome/react-fontawesome
 
 yarn add -D \
-  @types/jest \
-  @types/react \
-  @types/react-dom \
+  typescript \
+  @types/react @types/react-dom \
   @types/react-redux \
   @types/redux-logger \
-  css-loader \
-  jest \
-  style-loader \
-  ts-jest \
-  ts-loader \
-  tslint \
-  tslint-microsoft-contrib \
-  tslint-react \
-  typescript \
   webpack \
   webpack-cli \
-  webpack-serve
+  webpack-serve \
+  ts-loader \
+  css-loader style-loader \
+  sass-loader node-sass \
+  jest ts-jest @types/jest \
+  tslint tslint-microsoft-contrib tslint-react
 
 rm "$0"

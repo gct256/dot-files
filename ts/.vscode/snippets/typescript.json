@@ -1,7 +1,7 @@
 {
   "action type": {
     "prefix": "actiontype",
-    "body": ["const $1: '$1' = '$1';"]
+    "body": ["const $1: '$2/$1' = '$2/$1';"]
   },
   "import react": {
     "prefix": "react",
