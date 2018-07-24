@@ -39,6 +39,7 @@
       "arrow-parameter",
       "property-declaration",
       "member-variable-declaration"
-    ]
+    ],
+    "curly": [true, "ignore-same-line"]
   }
 }
