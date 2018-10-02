@@ -1,12 +1,13 @@
 #!/bin/sh
 
 yarn add \
-  immutable@rc \
-  react \
-  react-dom \
-  redux \
+  react react-dom \
+  redux immutable@rc \
+  react-redux \
   redux-logger \
-  react-redux
+  bulma \
+  @fortawesome/fontawesome @fortawesome/fontawesome-free-solid \
+  @fortawesome/fontawesome-svg-core @fortawesome/react-fontawesome
 
 yarn add -D \
   babel-core \

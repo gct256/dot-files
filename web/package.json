@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "serve": "browser-sync --config bs-config.js start"
+  }
+}

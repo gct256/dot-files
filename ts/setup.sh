@@ -2,7 +2,8 @@
 
 yarn add \
   react react-dom \
-  redux react-redux immutable@rc \
+  redux immutable@rc \
+  react-redux \
   redux-logger \
   bulma \
   @fortawesome/fontawesome @fortawesome/fontawesome-free-solid \
@@ -16,6 +17,7 @@ yarn add -D \
   webpack \
   webpack-cli \
   webpack-serve \
+  rollup rollup-plugin-typescript2 \
   ts-loader \
   css-loader style-loader \
   sass-loader node-sass \
