@@ -37,12 +37,7 @@
   "eslint.enable": true,
   "eslint.autoFixOnSave": false,
   //
-  "prettier.arrowParens": "always",
   "prettier.eslintIntegration": true,
-  "prettier.singleQuote": true,
-  "prettier.tabWidth": 2,
-  "prettier.trailingComma": "all",
-  "prettier.useTabs": false,
   //
   "flow.enabled": false,
   "flow.runOnAllFiles": false,
