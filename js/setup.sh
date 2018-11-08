@@ -6,6 +6,7 @@ yarn add \
   react-redux \
   redux-logger \
   bulma \
+  minireset.css \
   @fortawesome/fontawesome @fortawesome/fontawesome-free-solid \
   @fortawesome/fontawesome-svg-core @fortawesome/react-fontawesome
 
