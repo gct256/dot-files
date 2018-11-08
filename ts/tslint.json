@@ -8,7 +8,7 @@
       true,
       { "ignore-module": "^@fortawesome|(\\.html|\\.css|\\.scss|\\.sass)$" }
     ],
-    "variable-name": [true, "allow-pascal-case"],
+    "variable-name": [true, "allow-pascal-case", "allow-leading-underscore"],
     "function-name": [
       true,
       {
@@ -40,6 +40,9 @@
       "property-declaration",
       "member-variable-declaration"
     ],
-    "curly": [true, "ignore-same-line"]
+    "curly": [true, "ignore-same-line"],
+    "no-single-line-block-comment": false,
+    "no-suspicious-comment": false,
+    "import-name": [true, { "styledComponent": "styled" }]
   }
 }
