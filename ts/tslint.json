@@ -43,6 +43,8 @@
     "curly": [true, "ignore-same-line"],
     "no-single-line-block-comment": false,
     "no-suspicious-comment": false,
-    "import-name": [true, { "styledComponent": "styled" }]
+    "import-name": [true, { "styledComponent": "styled" }],
+    "newline-per-chained-call": false,
+    "no-console": [true, "log"]
   }
 }
