@@ -26,8 +26,9 @@
     "**/Thumbs.db": true,
     "**/node_modules": true,
     "dist/**/*.js": true,
-    "types/**/*.ts": true,
-    "coverage": true
+    "types": true,
+    "coverage": true,
+    ".rpt2_cache": true
   },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
@@ -37,15 +38,15 @@
   //
   "typescript.validate.enable": true,
   //
-  "eslint.enable": false,
+  "eslint.enable": true,
   "eslint.autoFixOnSave": false,
+  "eslint.validate": [
+    { "language": "javascript", "autoFix": false },
+    { "language": "javascriptreact", "autoFix": false },
+    { "language": "typescript", "autoFix": false },
+    { "language": "typescriptreact", "autoFix": false }
+  ],
   //
-  "prettier.eslintIntegration": false,
-  //
-  "flow.enabled": false,
-  "flow.runOnAllFiles": false,
-  "flow.runOnEdit": true,
-  "flow.stopFlowOnExit": true,
-  //
-  "tslint.enable": true
+  "prettier.eslintIntegration": true,
+  "prettier.tslintIntegration": false
 }

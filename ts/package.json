@@ -1,23 +1,17 @@
 {
+  "name": "package-name",
+  "version": "0.1.0",
+  "license": "MIT",
   "scripts": {
-    "start": "webpack-serve --config webpack.config.js --content dist --port 3000",
-    "build": "webpack --config webpack.config.js",
+    "rollup:watch": "rollup -c -w",
+    "rollup:build": "NODE_ENV=production rollup -c",
+    "webpack:watch": "webpack -w",
+    "webpack:serve": "webpack-dev-server",
+    "webpack:build": "NODE_ENV=production webpack",
     "test": "jest",
-    "test:watch": "jest --watchAll",
-    "serve": "browser-sync --config bs-config.js start"
+    "lint": "eslint --ext .ts,.tsx src"
   },
   "jest": {
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
+    "testRegex": "/__tests__/(.*/)?test_.*\\.(tsx?|jsx?)$"
   }
 }

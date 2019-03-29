@@ -1,17 +1,19 @@
-import '@fortawesome/fontawesome';
-import '@fortawesome/fontawesome-free-solid';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { App } from './components/App';
-import './style.scss';
+import { Root } from './views/components/Root';
 
+/**
+ * 処理開始
+ *
+ * @param root root要素
+ */
 function main(root: HTMLElement | null): void {
   if (root === null) {
     return;
   }
 
-  ReactDOM.render(<App />, root);
+  ReactDOM.render(<Root />, root);
 }
 
 main(document.getElementById('root'));
