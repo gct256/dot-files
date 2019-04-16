@@ -1,50 +1,61 @@
 #!/bin/sh
 
+PKG=""
+DPKG=""
+
 ###
 ### typescript
 ###
-yarn add -D typescript
-yarn add -D @types/node
+DPKG="$DPKG typescript"
+DPKG="$DPKG @types/node"
 
 ###
 ### react
 ###
-yarn add react react-dom
-yarn add -D @types/react @types/react-dom
+PKG="$PKG react react-dom"
+DPKG="$DPKG  @types/react @types/react-dom"
 
 ###
 ### redux
 ###
-yarn add redux react-redux
-yarn add -D @types/react-redux
+PKG="$PKG redux react-redux"
+DPKG="$DPKG @types/react-redux"
 
 ###
 ### eslint
 ###
-yarn add -D eslint @typescript-eslint/eslint-plugin eslint-config-prettier
-yarn add -D eslint-plugin-import eslint-plugin-promise
+DPKG="$DPKG eslint @typescript-eslint/eslint-plugin eslint-config-prettier"
+DPKG="$DPKG eslint-plugin-import eslint-plugin-promise"
 
 ###
 ### eslint config
 ###
-yarn add -D eslint-config-airbnb-base
+DPKG="$DPKG eslint-config-airbnb-base"
 # OR
-yarn add -D  eslint-config-airbnb eslint-plugin-react eslint-plugin-jsx-a11y
+DPKG="$DPKG  eslint-config-airbnb eslint-plugin-react eslint-plugin-jsx-a11y"
 
 ###
 ### test
 ###
-yarn add -D jest @types/jest babel-jest @babel/core @babel/preset-env @babel/preset-typescript @babel/plugin-proposal-class-properties @babel/plugin-syntax-class-properties
-yarn add -D @babel/preset-react react-test-renderer @types/react-test-renderer
+DPKG="$DPKG jest @types/jest babel-jest @babel/core @babel/preset-env @babel/preset-typescript @babel/plugin-proposal-class-properties @babel/plugin-syntax-class-properties"
+DPKG="$DPKG @babel/preset-react react-test-renderer @types/react-test-renderer"
 
 ###
 ### bundler (webpack)
 ###
-yarn add -D webpack webpack-cli webpack-dev-server ts-loader
-yarn add -D css-loader style-loader
-yarn add -D sass-loader node-sass
+DPKG="$DPKG webpack webpack-cli webpack-dev-server ts-loader"
+DPKG="$DPKG css-loader style-loader"
+DPKG="$DPKG sass-loader node-sass"
 
 ###
 ### bundler (rollup)
 ###
-yarn add -D rollup rollup-plugin-auto-external rollup-plugin-typescript2
+DPKG="$DPKG rollup rollup-plugin-auto-external rollup-plugin-typescript2"
+
+if [ -n "$PKG" ]; then
+  yarn add $PKG
+fi
+
+if [ -n "$DPKG" ]; then
+  yarn add -D $DPKG
+fi
