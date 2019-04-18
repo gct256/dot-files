@@ -1,5 +1,7 @@
 import { readFile } from 'fs';
 
+import { appReducer } from './redux/app/app';
+
 export function foo(x: number): number {
   return x * 2;
 }
@@ -19,3 +21,5 @@ export async function baz(filePath: string): Promise<string> {
     });
   });
 }
+
+console.debug(appReducer);

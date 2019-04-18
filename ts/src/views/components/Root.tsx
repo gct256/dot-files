@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { FCSample } from './FCSample';
-import { ClassSample } from './ClassSample';
+import { FcExample } from './FcExample';
+import { ClassExample } from './ClassExample';
 
 interface RootProps {
   title?: string;
@@ -10,8 +10,8 @@ interface RootProps {
 export const Root: React.FC<RootProps> = ({ title }: RootProps) => (
   <>
     <div>{title}</div>
-    <FCSample />
-    <ClassSample />
+    <FcExample />
+    <ClassExample />
   </>
 );
 

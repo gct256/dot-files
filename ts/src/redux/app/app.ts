@@ -1,27 +1,27 @@
 import { AnyAction, Dispatch, Store, combineReducers } from 'redux';
 
-import { ItemsState, ItemsAction, itemsReducer } from './items';
+import { ExamplesState, ExamplesAction, examplesReducer } from './examples';
 
-// ---- state
+// ==== state
 
 export interface AppState {
-  items: ItemsState;
+  examples: ExamplesState;
 }
 
-// ---- action
+// ==== action
 
-export type AppAction = ItemsAction | AnyAction;
+export type AppAction = ExamplesAction | AnyAction;
 
-// ---- dispatch
+// ==== dispatch
 
 export interface AppDispatch extends Dispatch<AppAction> {}
 
-// ---- reducer
+// ==== reducer
 
 export const appReducer = combineReducers({
-  items: itemsReducer,
+  examples: examplesReducer,
 });
 
-// ---- store
+// ==== store
 
 export interface AppStore extends Store<AppState, AppAction> {}

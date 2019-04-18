@@ -1,22 +1,22 @@
 import * as React from 'react';
 
-interface ClassSampleProps {
+interface ClassExampleProps {
   foo?: string;
 }
 
-interface ClassSampleState {
+interface ClassExampleState {
   bar: string;
 }
 
-export class ClassSample extends React.Component<
-  ClassSampleProps,
-  ClassSampleState
+export class ClassExample extends React.Component<
+  ClassExampleProps,
+  ClassExampleState
 > {
-  public static defaultProps: Partial<ClassSampleProps> = {
+  public static defaultProps: Partial<ClassExampleProps> = {
     foo: 'Foo',
   };
 
-  public state: ClassSampleState = {
+  public state: ClassExampleState = {
     bar: 'Bar',
   };
 
