@@ -38,8 +38,6 @@ if (!isProduction) {
   };
 }
 
-console.debug(baseConfig);
-
 module.exports = {
   ...baseConfig,
   entry: './src/script.tsx',
