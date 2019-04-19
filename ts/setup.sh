@@ -12,14 +12,22 @@ DPKG="$DPKG @types/node"
 ###
 ### react
 ###
-PKG="$PKG react react-dom"
-DPKG="$DPKG  @types/react @types/react-dom"
+PKG="$PKG react react-dom classnames"
+DPKG="$DPKG  @types/react @types/react-dom @types/classnames"
 
 ###
 ### redux
 ###
 PKG="$PKG redux react-redux"
 DPKG="$DPKG @types/react-redux"
+
+PKG="$PKG redux-logger"
+DPKG="$DPKG @types/redux-logger"
+
+###
+### immutable
+###
+PKG="$PKG immutable"
 
 ###
 ### eslint
@@ -51,6 +59,16 @@ DPKG="$DPKG sass-loader node-sass"
 ### bundler (rollup)
 ###
 DPKG="$DPKG rollup rollup-plugin-auto-external rollup-plugin-typescript2"
+
+###
+### tailwind
+###
+DPKG="$DPKG tailwindcss"
+
+###
+### fontawesome
+###
+PKG="$PKG @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome"
 
 if [ -n "$PKG" ]; then
   yarn add $PKG

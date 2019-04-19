@@ -11,6 +11,7 @@ cp -i -r "$SRCDIR/ts/__tests__" "$DSTDIR/"
 cp -i -r "$SRCDIR/ts/dist" "$DSTDIR/"
 cp -i -r "$SRCDIR/ts/src" "$DSTDIR/"
 
+cp -i "$SRCDIR/ts/.eslintignore" "$DSTDIR/"
 cp -i "$SRCDIR/ts/.eslintrc.yml" "$DSTDIR/"
 cp -i "$SRCDIR/ts/babel.config.js" "$DSTDIR/"
 cp -i "$SRCDIR/ts/package.json" "$DSTDIR/"
