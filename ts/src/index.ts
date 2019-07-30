@@ -1,16 +1,14 @@
 import { readFile } from 'fs';
 
-import { appReducer } from './redux/app/app';
-
-export function foo(x: number): number {
+export const foo = (x: number): number => {
   return x * 2;
-}
+};
 
-export function bar(x: number): number {
+export const bar = (x: number): number => {
   return x * 4;
-}
+};
 
-export async function baz(filePath: string): Promise<string> {
+export const baz = async (filePath: string): Promise<string> => {
   return new Promise((resolve, reject) => {
     readFile(filePath, 'utf8', (err, data) => {
       if (err) {
@@ -20,6 +18,4 @@ export async function baz(filePath: string): Promise<string> {
       }
     });
   });
-}
-
-console.debug(appReducer);
+};

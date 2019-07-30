@@ -30,22 +30,29 @@ DPKG="$DPKG @types/redux-logger"
 PKG="$PKG immutable"
 
 ###
+### prettier
+###
+DPKG="$DPKG prettier"
+
+###
 ### eslint
 ###
-DPKG="$DPKG eslint @typescript-eslint/eslint-plugin eslint-config-prettier"
+DPKG="$DPKG eslint @typescript-eslint/eslint-plugin"
 DPKG="$DPKG eslint-plugin-import eslint-plugin-promise"
+DPKG="$DPKG @typescript-eslint/parser"
+DPKG="$DPKG eslint-plugin-prettier eslint-config-prettier"
 
 ###
 ### eslint config
 ###
 DPKG="$DPKG eslint-config-airbnb-base"
 # OR
-DPKG="$DPKG  eslint-config-airbnb eslint-plugin-react eslint-plugin-jsx-a11y"
+DPKG="$DPKG eslint-config-airbnb eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-react-hooks"
 
 ###
 ### test
 ###
-DPKG="$DPKG jest @types/jest babel-jest @babel/core @babel/preset-env @babel/preset-typescript @babel/plugin-proposal-class-properties @babel/plugin-syntax-class-properties"
+DPKG="$DPKG jest @types/jest babel-jest @babel/core @babel/preset-env @babel/preset-typescript @babel/plugin-proposal-class-properties @babel/plugin-syntax-class-properties eslint-plugin-jest"
 DPKG="$DPKG @babel/preset-react react-test-renderer @types/react-test-renderer"
 
 ###
