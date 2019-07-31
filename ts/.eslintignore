@@ -1,3 +1,4 @@
 *.js
+*.mjs
 *.d.ts
 *.pegjs

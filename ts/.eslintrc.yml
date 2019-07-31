@@ -90,3 +90,14 @@ rules:
   func-style:
     - error
     - expression
+
+  # 先頭が_の変数は使ってなくても良い
+  '@typescript-eslint/no-unused-vars':
+    - error
+    - argsIgnorePattern: '^_'
+
+  # 引数のプロパティを操作してもよい変数名を指定
+  no-param-reassign:
+    - error
+    - props: true
+      ignorePropertyModificationsFor: []

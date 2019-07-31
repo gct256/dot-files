@@ -49,7 +49,14 @@
   //
   "prettier.eslintIntegration": false,
   "prettier.tslintIntegration": false,
-  "prettier.disableLanguages": ["vue", "html"],
+  "prettier.disableLanguages": [
+    "vue",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   //
   "highlight.regexFlags": "mgi",
   "highlight.regexes": {

@@ -11,6 +11,8 @@
     "test": "jest",
     "lint": "eslint --ext .ts,.tsx src"
   },
+  "main": "./lib",
+  "typings": "./types/index.d.ts",
   "jest": {
     "testRegex": "/__tests__/(.*/)?test_.*\\.(tsx?|jsx?)$"
   }

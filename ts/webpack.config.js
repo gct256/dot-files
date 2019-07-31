@@ -1,9 +1,6 @@
 const path = require('path');
 
-// 出力ディレクトリ
 const distPath = path.resolve(__dirname, 'dist');
-
-// リリースビルド切り替え
 const isProduction = process.env.NODE_ENV === 'production';
 
 const baseConfig = {
