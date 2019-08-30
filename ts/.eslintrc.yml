@@ -20,7 +20,6 @@ env:
 
 parserOptions:
   sourceType: module
-  project: ./tsconfig.json
   ecmaFeatures:
     jsx: false
 
