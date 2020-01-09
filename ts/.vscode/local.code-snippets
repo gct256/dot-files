@@ -6,9 +6,9 @@
       "import * as React from 'react';",
       "import classnames from 'classnames';",
       "",
-      "interface ${TM_FILENAME_BASE}Props {",
+      "type ${TM_FILENAME_BASE}Props = {",
       "  foo?: string;${0}",
-      "}",
+      "};",
       "",
       "export const ${TM_FILENAME_BASE}: React.FC<${TM_FILENAME_BASE}Props> = ({foo}: ${TM_FILENAME_BASE}Props): React.ReactElement | null => {",
       "  return <div>{foo}</div>;",
@@ -35,13 +35,13 @@
       "${TM_FILENAME_BASE}.displayName = '${TM_FILENAME_BASE}';"
     ]
   },
-  "re-ducks state (interface only)": {
+  "re-ducks state (type only)": {
     "scope": "typescript",
     "prefix": "state",
     "body": [
       "import { Map } from 'immutable';",
       "",
-      "export interface ${TM_DIRECTORY/.*\\/(.)/${1:/upcase}/} extends Map<string, boolean> {}",
+      "export type ${TM_DIRECTORY/.*\\/(.)/${1:/upcase}/} = Map<string, boolean>;",
       "",
       "export const create${TM_DIRECTORY/.*\\/(.)/${1:/upcase}/} = (): ${TM_DIRECTORY/.*\\/(.)/${1:/upcase}/} => Map();"
     ]
@@ -52,8 +52,8 @@
     "body": [
       "import { Record } from 'immutable';",
       "",
-      "export interface ${TM_DIRECTORY/.*\\/(.)/${1:/upcase}/}Data {",
-      "}",
+      "export type ${TM_DIRECTORY/.*\\/(.)/${1:/upcase}/}Data = {",
+      "};",
       "",
       "export class ${TM_DIRECTORY/.*\\/(.)/${1:/upcase}/}",
       "  extends Record({",
@@ -63,22 +63,47 @@
       "export const create${TM_DIRECTORY/.*\\/(.)/${1:/upcase}/} = (): ${TM_DIRECTORY/.*\\/(.)/${1:/upcase}/} => new ${TM_DIRECTORY/.*\\/(.)/${1:/upcase}/}();"
     ]
   },
-  "re-ducks action type": {
+  "re-ducks action types": {
     "scope": "typescript",
-    "prefix": "type",
+    "prefix": "types",
     "body": [
       "export const ${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g}: '${TM_DIRECTORY/.*\\///}/${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g}' = '${TM_DIRECTORY/.*\\///}/${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g}';"
     ]
   },
-  "re-ducks action creator": {
+  "re-ducks actions": {
     "scope": "typescript",
-    "prefix": "action",
+    "prefix": "actions",
     "body": [
-      "/* eslint-disable @typescript-eslint/explicit-function-return-type */",
-      "",
       "import * as types from './types';",
       "",
       "export type ${TM_DIRECTORY/.*\\/(.)/${1:/upcase}/}Action = "
+    ]
+  },
+  "re-ducks action": {
+    "scope": "typescript",
+    "prefix": "action",
+    "body": [
+      "type ${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/capitalize}$3$4/g}Action = {",
+      "  type: typeof types.${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g};",
+      "  payload: {",
+      "    $0",
+      "  };",
+      "};",
+      "",
+      "export const $1 = (payload: ${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/capitalize}$3$4/g}Action['payload']): ${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/capitalize}$3$4/g}Action => ({",
+      "  type: types.${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g},",
+      "  payload,",
+      "})"
+    ]
+  },
+  "re-ducks action creator": {
+    "scope": "typescript",
+    "prefix": "action creator",
+    "body": [
+      "export const $1 = (payload: ${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/capitalize}$3$4/g}Action['payload']): ${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/capitalize}$3$4/g}Action => ({",
+      "  type: types.${1/([a-z]*)(([A-Z])+([a-z]+))?/${1:/upcase}${2:+_}$3${4:/upcase}/g},",
+      "  payload,",
+      "})"
     ]
   },
   "re-ducks reducer": {
@@ -113,8 +138,8 @@
     "scope": "typescript",
     "prefix": "operation",
     "body": [
-      "export const $1 = async (dispatch: AppDispatch$2): Promise<void> => {",
-      "$0",
+      "export const $1 = async (dispatch: AppDispatch$2$0): Promise<void> => {",
+      "  dispatch(actions.$1());",
       "};"
     ]
   },
@@ -126,7 +151,7 @@
       "",
       "import { AppState } from '..';",
       "",
-      "export const get = (state: AppState): ${TM_DIRECTORY/.*\\/(.)/${1:/upcase}/} => state.${TM_DIRECTORY/.*\\///};"
+      "export const getAll = (state: AppState): ${TM_DIRECTORY/.*\\/(.)/${1:/upcase}/} => state.${TM_DIRECTORY/.*\\///};"
     ]
   },
   "re-ducks selector": {
@@ -150,12 +175,12 @@
     "body": [
       "import { AnyAction, Dispatch, combineReducers } from 'redux';",
       "",
-      "export interface AppState {",
-      "}",
+      "export type AppState = {",
+      "};",
       "",
       "export type AppAction = AnyAction;",
       "",
-      "export interface AppDispatch extends Dispatch<AppAction> {}",
+      "export type AppDispatch = Dispatch<AppAction>;",
       "",
       "export const appReducer = combineReducers({",
       "});"

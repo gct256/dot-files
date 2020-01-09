@@ -1,10 +1,72 @@
+# 共通のeslintrc
+
 root: true
-plugins:
-  - flowtype
+
 extends:
   - airbnb-base
-  - airbnb
-  - plugin:flowtype/recommended
+  - plugin:promise/recommended
+  - plugin:prettier/recommended
+
+env:
+  browser: true
+
+global:
+  $: true
+
+parserOptions:
+  sourceType: module
+
 settings:
-  flowtype:
-    onlyFilesWithFlowAnnotation: true
+  import/resolver:
+    node:
+      extensions:
+        - .mjs
+
+rules:
+  # consoleは限定
+  no-console:
+    - error
+    - allow: [debug, warn, error]
+
+  # case の break 省略はエラー / fall through コメントで抑制
+  no-fallthrough:
+    - error
+
+  # default export は使わない
+  import/prefer-default-export:
+    - off
+  import/no-default-export:
+    - error
+
+  # importの順
+  import/order:
+    - error
+    - newlines-between: always
+
+  # 適当に空行が入るようにする
+  padding-line-between-statements:
+    - error
+    - { blankLine: always, prev: '*', next: return }
+    - { blankLine: any, prev: export, next: export }
+    - { blankLine: always, prev: '*', next: if }
+    - { blankLine: always, prev: '*', next: const }
+    - { blankLine: always, prev: const, next: '*' }
+    - { blankLine: any, prev: const, next: const }
+    - { blankLine: always, prev: case, next: '*' }
+
+  # 適当に空行が入るようにする
+  lines-between-class-members:
+    - error
+    - always
+    - exceptAfterSingleLine: true
+
+  # 関数はconstで定義する
+  func-style:
+    - error
+    - expression
+
+  # 引数のプロパティを操作してもよい変数名を指定
+  no-param-reassign:
+    - error
+    - props: true
+      ignorePropertyModificationsFor: []
