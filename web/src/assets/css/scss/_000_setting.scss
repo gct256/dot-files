@@ -1,0 +1,44 @@
+// responsive
+
+$break-point: 768px;
+
+@mixin for-pc {
+  @media only screen and (min-width: $break-point) {
+    @content;
+  }
+}
+
+@mixin for-smartphone {
+  @media only screen and (max-width: $break-point - 1) {
+    @content;
+  }
+}
+
+// functions
+
+@function pxToVw($px, $base: 320px) {
+  @return ($px / ($base / 100)) * 1vw;
+}
+
+// hack
+
+@mixin ie-only($selector) {
+  _:lang(x)::-ms-backdrop,
+  #{$selector} {
+    @content;
+  }
+}
+
+// debug
+
+@mixin debug {
+  box-shadow: inset 0 0 0 1px rgba(255, 0, 0, 0.25),
+    inset 0 0 0 4px rgba(255, 0, 0, 0.125), 0 0 0 1px rgba(0, 0, 255, 0.25),
+    0 0 0 4px rgba(0, 0, 255, 0.125) !important;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px rgba(255, 0, 0, 1),
+      inset 0 0 0 4px rgba(255, 0, 0, 0.125), 0 0 0 1px rgba(0, 0, 255, 1),
+      0 0 0 4px rgba(0, 0, 255, 0.125) !important;
+  }
+}

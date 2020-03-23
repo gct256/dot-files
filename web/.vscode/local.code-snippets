@@ -1,0 +1,10 @@
+{
+  "for-PC": {
+    "prefix": "@pc",
+    "body": ["@include for-pc {", "$1", "}"]
+  },
+  "for-SP": {
+    "prefix": "@sp",
+    "body": ["@include for-smartphone {", "$1", "}"]
+  }
+}

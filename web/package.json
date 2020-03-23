@@ -1,5 +1,7 @@
 {
   "scripts": {
-    "serve": "browser-sync --config bs-config.js start"
+    "clean": "sitar clean",
+    "start": "sitar start",
+    "dist": "sitar dist"
   }
 }

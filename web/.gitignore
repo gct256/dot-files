@@ -1,0 +1,12 @@
+/data
+/dist
+
+*.css
+*.css.map
+!*.min.css
+
+*.js
+*.js.map
+!*.min.js
+
+*.svgz

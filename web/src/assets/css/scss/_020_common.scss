@@ -1,0 +1,21 @@
+@import './000_setting';
+
+// font
+
+html {
+  @include for-pc {
+    font-size: 16px;
+    font-family: sans-serif;
+  }
+  @include for-smartphone {
+    height: 100%;
+    font-size: pxToVw(16px);
+    font-family: sans-serif;
+  }
+}
+
+body {
+  font-feature-settings: 'palt';
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
