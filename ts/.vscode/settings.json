@@ -39,13 +39,6 @@
   "typescript.validate.enable": true,
   //
   "eslint.enable": true,
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    { "language": "javascript", "autoFix": true },
-    { "language": "javascriptreact", "autoFix": true },
-    { "language": "typescript", "autoFix": true },
-    { "language": "typescriptreact", "autoFix": true }
-  ],
   //
   "prettier.disableLanguages": ["vue", "html"],
   //
@@ -75,5 +68,8 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   }
 }
