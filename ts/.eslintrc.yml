@@ -1,22 +1,14 @@
-# 共通のeslintrc
-
 root: true
 
 extends:
   - airbnb
   - plugin:promise/recommended
-  - plugin:@typescript-eslint/recommended
   - plugin:prettier/recommended
-  - prettier/@typescript-eslint
   - prettier/react
-
-plugins:
-  - react-hooks
+  - plugin:@typescript-eslint/recommended
+  - prettier/@typescript-eslint
 
 parser: '@typescript-eslint/parser'
-
-env:
-  browser: true
 
 parserOptions:
   sourceType: module
@@ -53,15 +45,10 @@ rules:
     - error
     - newlines-between: always
 
-  # interface 継承時は空でもよい
-  '@typescript-eslint/no-empty-interface':
+  # importで拡張子は不要
+  import/extensions:
     - error
-    - allowSingleExtends: true
-
-  # tsx を許容
-  react/jsx-filename-extension:
-    - error
-    - extensions: ['.jsx', '.tsx']
+    - never
 
   # 適当に空行が入るようにする
   padding-line-between-statements:
@@ -80,23 +67,35 @@ rules:
     - always
     - exceptAfterSingleLine: true
 
-  # 戻り値の型は常に必要
-  '@typescript-eslint/explicit-function-return-type':
-    - error
-    - allowExpressions: true # 引数のコールバックなどは省略可
-
   # 関数はconstで定義する
   func-style:
     - error
     - expression
 
+  # 引数のプロパティ操作禁止
+  no-param-reassign:
+    - error
+    - props: true
+      # コンテキスト的なものは許可
+      ignorePropertyModificationsFor:
+        - ctx
+        - context
+
+  ### for React
+
+  # tsx を許容
+  react/jsx-filename-extension:
+    - error
+    - extensions: ['.jsx', '.tsx']
+
+  ### for TypeScript
+
+  # 戻り値の型は常に必要
+  '@typescript-eslint/explicit-function-return-type':
+    - error
+    - allowExpressions: true # 引数のコールバックなどは省略可
+
   # 先頭が_の変数は使ってなくても良い
   '@typescript-eslint/no-unused-vars':
     - error
     - argsIgnorePattern: '^_'
-
-  # 引数のプロパティを操作してもよい変数名を指定
-  no-param-reassign:
-    - error
-    - props: true
-      ignorePropertyModificationsFor: []

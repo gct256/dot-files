@@ -47,7 +47,7 @@ DPKG="$DPKG eslint-plugin-prettier eslint-config-prettier"
 ###
 DPKG="$DPKG eslint-config-airbnb-base"
 # OR
-DPKG="$DPKG eslint-config-airbnb eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-react-hooks"
+DPKG="$DPKG eslint-config-airbnb eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-react-hooks@2"
 
 ###
 ### test

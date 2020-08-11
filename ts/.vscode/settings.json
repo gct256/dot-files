@@ -13,7 +13,7 @@
   "editor.wordWrapColumn": 80,
   "editor.wrappingIndent": "none",
   //
-  "files.autoGuessEncoding": true,
+  "files.autoGuessEncoding": false,
   "files.autoSave": "off",
   "files.encoding": "utf8",
   "files.eol": "\n",
